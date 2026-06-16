@@ -1,0 +1,121 @@
+=== ALL ROUTES IN REGISTRATION ORDER ===
+  [00] {'GET', 'HEAD'}                /openapi.json  (openapi)
+  [01] {'GET', 'HEAD'}                /docs  (swagger_ui_html)
+  [02] {'GET', 'HEAD'}                /docs/oauth2-redirect  (swagger_ui_redirect)
+  [03] {'GET', 'HEAD'}                /redoc  (redoc_html)
+  [04]                                /uploads  (uploads)
+  [05] {'POST'}                       /auth/register  (register)
+  [06] {'POST'}                       /auth/login  (login)
+  [07] {'GET'}                        /auth/me  (me)
+  [08] {'GET'}                        /admin/stats  (admin_stats)
+  [09] {'GET'}                        /admin/history  (admin_history)
+  [10] {'GET'}                        /admin/revenue  (admin_revenue_v2)
+  [11] {'GET'}                        /admin/landlords  (admin_landlords)
+  [12] {'PUT'}                        /admin/landlords/{lid}/activate  (activate_landlord)
+  [13] {'PUT'}                        /admin/landlords/{lid}/deactivate  (deactivate_landlord)
+  [14] {'PUT'}                        /admin/landlords/{lid}/approve  (approve_landlord)
+  [15] {'PUT'}                        /admin/landlords/{lid}/set-fee  (set_landlord_fee)
+  [16] {'POST'}                       /admin/landlords/{lid}/generate-platform-fee  (generate_landlord_platform_fee)
+  [17] {'GET'}                        /admin/landlords/{lid}/detail  (admin_landlord_detail)
+  [18] {'GET'}                        /admin/properties  (admin_all_properties)
+  [19] {'GET'}                        /admin/tenants  (admin_all_tenants)
+  [20] {'DELETE'}                     /admin/landlords/{lid}  (delete_landlord)
+  [21] {'PUT'}                        /admin/landlords/{lid}/reject  (reject_landlord)
+  [22] {'GET'}                        /notifications  (list_notifications)
+  [23] {'GET'}                        /notifications/unread-count  (unread_count)
+  [24] {'PUT'}                        /notifications/{nid}/read  (mark_notification_read)
+  [25] {'PUT'}                        /notifications/read-all  (mark_all_read)
+  [26] {'GET'}                        /properties  (list_properties)
+  [27] {'POST'}                       /properties  (create_property)
+  [28] {'GET'}                        /properties/{pid}  (get_property)
+  [29] {'GET'}                        /properties/{pid}/rooms  (list_property_rooms)
+  [30] {'POST'}                       /properties/{pid}/rooms  (create_room)
+  [31] {'GET'}                        /rooms  (list_all_rooms)
+  [32] {'PUT'}                        /rooms/{rid}  (update_room)
+  [33] {'DELETE'}                     /rooms/{rid}  (delete_room)
+  [34] {'GET'}                        /tenants  (list_tenants)
+  [35] {'POST'}                       /tenants  (create_tenant)
+  [36] {'PUT'}                        /tenants/{tid}  (update_tenant)
+  [37] {'DELETE'}                     /tenants/{tid}  (delete_tenant)
+  [38] {'PUT'}                        /tenants/{tid}/assign-room  (assign_room)
+  [39] {'PUT'}                        /tenants/{tid}/vacate  (vacate_tenant)
+  [40] {'GET'}                        /rent  (list_rent)
+  [41] {'POST'}                       /rent/generate  (generate_rent)
+  [42] {'PUT'}                        /rent/{rid}/status  (update_rent_status)
+  [43] {'PUT'}                        /rent/{rid}/verify  (verify_rent_payment)
+  [44] {'PUT'}                        /rent/{rid}/reject-payment  (reject_rent_payment)
+  [45] {'GET'}                        /maintenance  (list_maintenance)
+  [46] {'PUT'}                        /maintenance/{mid}/status  (update_maintenance)
+  [47] {'GET'}                        /complaints  (list_complaints)
+  [48] {'PUT'}                        /complaints/{cid}/respond  (respond_complaint)
+  [49] {'GET'}                        /notices  (list_notices)
+  [50] {'POST'}                       /notices  (create_notice)
+  [51] {'DELETE'}                     /notices/{nid}  (delete_notice)
+  [52] {'GET'}                        /reports/revenue  (revenue_report)
+  [53] {'GET'}                        /reports/occupancy  (occupancy_report)
+  [54] {'GET'}                        /landlord/stats  (landlord_stats)
+  [55] {'GET'}                        /my/profile  (my_profile)
+  [56] {'GET'}                        /my/room  (my_room)
+  [57] {'GET'}                        /my/rent  (my_rent)
+  [58] {'PUT'}                        /my/rent/{rid}/pay  (pay_rent)
+  [59] {'GET'}                        /my/maintenance  (my_maintenance)
+  [60] {'POST'}                       /my/maintenance  (submit_maintenance)
+  [61] {'PUT'}                        /my/maintenance/{mid}  (update_my_maintenance)
+  [62] {'GET'}                        /my/complaints  (my_complaints)
+  [63] {'POST'}                       /my/complaints  (submit_complaint)
+  [64] {'PUT'}                        /my/profile/change-password  (change_password)
+  [65] {'GET'}                        /my/notices  (my_notices)
+  [66] {'GET'}                        /admin/platform-payments  (list_platform_payments)
+  [67] {'POST'}                       /admin/platform-payments/generate  (generate_platform_payments)
+  [68] {'PUT'}                        /admin/platform-payments/{pid}/status  (update_platform_payment_status)
+  [69] {'GET'}                        /admin/revenue  (admin_revenue)
+  [70] {'GET'}                        /admin/landlords/history  (admin_landlords_history)
+  [71] {'GET'}                        /reports/profit  (profit_report)
+  [72] {'GET'}                        /landlord/platform-fee  (landlord_platform_fee)
+  [73] {'PUT'}                        /landlord/platform-fee/{pid}/pay  (landlord_mark_platform_fee_paid)
+=== END ROUTES ===
+REQUEST: GET /admin/revenue (from unknown)
+RESPONSE: GET /admin/revenue -> 403
+INFO:     127.0.0.1:62493 - "GET /admin/revenue HTTP/1.1" 403 Forbidden
+REQUEST: GET /admin/history (from unknown)
+RESPONSE: GET /admin/history -> 403
+INFO:     127.0.0.1:62493 - "GET /admin/history HTTP/1.1" 403 Forbidden
+REQUEST: GET /admin/properties (from unknown)
+RESPONSE: GET /admin/properties -> 403
+INFO:     127.0.0.1:62493 - "GET /admin/properties HTTP/1.1" 403 Forbidden
+REQUEST: GET /admin/tenants (from unknown)
+RESPONSE: GET /admin/tenants -> 403
+INFO:     127.0.0.1:62493 - "GET /admin/tenants HTTP/1.1" 403 Forbidden
+REQUEST: PUT /admin/landlords/1/set-fee (from unknown)
+RESPONSE: PUT /admin/landlords/1/set-fee -> 403
+INFO:     127.0.0.1:62493 - "PUT /admin/landlords/1/set-fee HTTP/1.1" 403 Forbidden
+REQUEST: DELETE /admin/landlords/1 (from unknown)
+RESPONSE: DELETE /admin/landlords/1 -> 403
+INFO:     127.0.0.1:62493 - "DELETE /admin/landlords/1 HTTP/1.1" 403 Forbidden
+REQUEST: POST /auth/login (from unknown)
+RESPONSE: POST /auth/login -> 200
+INFO:     127.0.0.1:53264 - "POST /auth/login HTTP/1.1" 200 OK
+REQUEST: POST /auth/login (from unknown)
+RESPONSE: POST /auth/login -> 200
+INFO:     127.0.0.1:54394 - "POST /auth/login HTTP/1.1" 200 OK
+REQUEST: GET /admin/revenue (from unknown)
+HIT: GET /admin/revenue
+RESPONSE: GET /admin/revenue -> 200
+INFO:     127.0.0.1:54394 - "GET /admin/revenue HTTP/1.1" 200 OK
+REQUEST: GET /admin/history (from unknown)
+HIT: GET /admin/history
+RESPONSE: GET /admin/history -> 200
+INFO:     127.0.0.1:54394 - "GET /admin/history HTTP/1.1" 200 OK
+REQUEST: GET /admin/properties (from unknown)
+HIT: GET /admin/properties
+RESPONSE: GET /admin/properties -> 200
+INFO:     127.0.0.1:54394 - "GET /admin/properties HTTP/1.1" 200 OK
+REQUEST: GET /admin/tenants (from unknown)
+HIT: GET /admin/tenants
+RESPONSE: GET /admin/tenants -> 200
+INFO:     127.0.0.1:54394 - "GET /admin/tenants HTTP/1.1" 200 OK
+REQUEST: PUT /admin/landlords/1/set-fee (from unknown)
+HIT: PUT /admin/landlords/1/set-fee fee=500.0
+[set-fee] Setting fee for landlord 1 to 500.0
+RESPONSE: PUT /admin/landlords/1/set-fee -> 404
+INFO:     127.0.0.1:54394 - "PUT /admin/landlords/1/set-fee HTTP/1.1" 404 Not Found
