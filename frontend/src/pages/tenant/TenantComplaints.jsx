@@ -184,7 +184,7 @@ export default function TenantComplaints() {
                     <p className="text-xs text-gray-400 mt-1">Submitted: {fmtDate(c.created_at)}</p>
                   </div>
                   {c.photo_url && (
-                    <button onClick={() => setLightbox(`${BASE}/uploads/${c.photo_url}`)}
+                    <button onClick={() => setLightbox(c.photo_url)}
                       className="shrink-0 px-3 py-1.5 border border-blue-400 text-blue-600 rounded-lg text-xs font-medium hover:bg-blue-50 flex items-center gap-1.5 transition">
                       <Image size={11} /> View Photo
                     </button>

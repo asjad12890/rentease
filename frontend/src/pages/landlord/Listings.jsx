@@ -298,7 +298,7 @@ export default function LandlordListings() {
                   <tr key={l.id} className="border-t border-gray-50 hover:bg-gray-50">
                     <td className="px-4 py-3">
                       {l.primary_photo ? (
-                        <img src={`${BASE}/uploads/${l.primary_photo}`} alt=""
+                        <img src={l.primary_photo} alt=""
                           className="w-12 h-12 rounded-lg object-cover border border-gray-200" />
                       ) : (
                         <div className="w-12 h-12 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
@@ -457,7 +457,7 @@ export default function LandlordListings() {
                 <div className="flex gap-2 flex-wrap mb-3">
                   {viewPhotos.map((p) => (
                     <div key={p.id} className="relative group">
-                      <img src={`${BASE}/uploads/${p.photo_url}`} alt=""
+                      <img src={p.photo_url} alt=""
                         className="w-20 h-20 object-cover rounded-lg border border-gray-200" />
                       {p.is_primary === 1 && (
                         <span className="absolute bottom-0 left-0 right-0 text-center text-[9px] bg-blue-600 text-white rounded-b-lg py-0.5">Cover</span>

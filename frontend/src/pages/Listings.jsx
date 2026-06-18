@@ -26,7 +26,7 @@ function fmtPrice(min, max) {
 
 function ListingCard({ listing, onClick }) {
   const photoUrl = listing.primary_photo
-    ? `${BASE}/uploads/${listing.primary_photo}`
+    ? `${listing.primary_photo}`
     : null;
 
   return (

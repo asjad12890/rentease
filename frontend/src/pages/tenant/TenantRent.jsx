@@ -164,7 +164,7 @@ export default function TenantRent() {
                           <Download size={11} /> Download Receipt
                         </button>
                       ) : p.receipt_image ? (
-                        <a href={`${BASE}/uploads/${p.receipt_image}`} target="_blank" rel="noreferrer"
+                        <a href={p.receipt_image} target="_blank" rel="noreferrer"
                           className="inline-flex items-center gap-1 px-2.5 py-1 text-xs border border-blue-300 text-blue-600 rounded-lg hover:bg-blue-50 transition">
                           <Receipt size={11} /> View Receipt
                         </a>

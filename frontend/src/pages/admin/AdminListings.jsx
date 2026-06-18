@@ -154,7 +154,7 @@ export default function AdminListings() {
                     <tr key={l.id} className="border-t border-gray-50 hover:bg-gray-50">
                       <td className="px-4 py-3">
                         {primaryPhoto ? (
-                          <img src={`${BASE}/uploads/${primaryPhoto.photo_url}`} alt=""
+                          <img src={primaryPhoto.photo_url} alt=""
                             className="w-12 h-12 rounded-lg object-cover border border-gray-200" />
                         ) : (
                           <div className="w-12 h-12 rounded-lg bg-gray-100 border border-gray-200 flex items-center justify-center">
@@ -215,7 +215,7 @@ export default function AdminListings() {
             {detailPhotos.length > 0 ? (
               <div>
                 <div className="w-full max-h-[300px] bg-gray-100 rounded-xl overflow-hidden mb-2">
-                  <img src={`${BASE}/uploads/${detailPhotos[activePhotoIdx]?.photo_url}`} alt=""
+                  <img src={detailPhotos[activePhotoIdx]?.photo_url} alt=""
                     className="w-full h-full object-cover max-h-[300px]" />
                 </div>
                 {detailPhotos.length > 1 && (
@@ -225,7 +225,7 @@ export default function AdminListings() {
                         className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition ${
                           activePhotoIdx === i ? 'border-blue-500' : 'border-transparent hover:border-gray-300'
                         }`}>
-                        <img src={`${BASE}/uploads/${p.photo_url}`} alt="" className="w-full h-full object-cover" />
+                        <img src={p.photo_url} alt="" className="w-full h-full object-cover" />
                       </button>
                     ))}
                   </div>

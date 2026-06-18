@@ -108,7 +108,7 @@ export default function ListingDetail() {
   }
 
   const photos = listing.photos || [];
-  const activePhotoUrl = photos.length > 0 ? `${BASE}/uploads/${photos[mainPhotoIdx]?.photo_url}` : null;
+  const activePhotoUrl = photos.length > 0 ? `${photos[mainPhotoIdx]?.photo_url}` : null;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -163,7 +163,7 @@ export default function ListingDetail() {
                       className={`shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition cursor-pointer ${
                         mainPhotoIdx === i ? 'ring-2 ring-blue-500 border-blue-500' : 'border-transparent hover:border-gray-300'
                       }`}>
-                      <img src={`${BASE}/uploads/${p.photo_url}`} alt="" className="w-full h-full object-cover" />
+                      <img src={p.photo_url} alt="" className="w-full h-full object-cover" />
                     </button>
                   ))}
                 </div>
