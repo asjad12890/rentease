@@ -11,6 +11,8 @@ import string
 from datetime import datetime, timedelta, date
 from typing import Optional, List
 
+IS_PRODUCTION = os.getenv("RAILWAY_ENVIRONMENT") is not None
+
 import cloudinary
 import cloudinary.uploader
 
@@ -968,7 +970,8 @@ def generate_admin_report_pdf():
                    COALESCE(SUM(amount), 0) as total
             FROM platform_payments
             GROUP BY month_year
-            HAVING received > 0 OR pending > 0
+            HAVING COALESCE(SUM(CASE WHEN status='paid' THEN amount ELSE 0 END), 0) > 0
+                OR COALESCE(SUM(CASE WHEN status!='paid' THEN amount ELSE 0 END), 0) > 0
             ORDER BY month_year ASC
         """)
         monthly_fees = cur.fetchall()

@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { UserCheck, X, ExternalLink, Download } from 'lucide-react';
 import { fmtDate, fmtMonthYear, toTitleCase } from '../../utils/format.jsx';
 
-const BASE = 'http://localhost:8000';
+import { BASE_URL as BASE } from '../../api/config';
 const token = () => localStorage.getItem('token');
 const authHeaders = () => ({ 'Authorization': `Bearer ${token()}`, 'Content-Type': 'application/json' });
 

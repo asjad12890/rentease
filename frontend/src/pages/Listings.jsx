@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { Building2, MapPin, User, Search, BedDouble, ArrowLeft, ShieldCheck } from 'lucide-react';
 
-const BASE = 'http://localhost:8000';
+import { BASE_URL as BASE, getPhotoUrl } from '../api/config';
 
 const CATEGORY_LABEL = { hostel: 'Hostel', apartment: 'Apartment', house: 'House' };
 const CATEGORY_COLORS = {
@@ -26,7 +26,7 @@ function fmtPrice(min, max) {
 
 function ListingCard({ listing, onClick }) {
   const photoUrl = listing.primary_photo
-    ? `${listing.primary_photo}`
+    ? getPhotoUrl(listing.primary_photo)
     : null;
 
   return (

@@ -5,3 +5,7 @@ python-multipart==0.0.9
 psycopg2-binary
 python-dotenv
 cloudinary
+reportlab
+apscheduler
+passlib
+bcrypt

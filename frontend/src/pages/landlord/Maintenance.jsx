@@ -3,6 +3,7 @@ import api from '../../api/client';
 import { ChevronDown, ChevronUp, Image, Wrench } from 'lucide-react';
 import { fmtDate, toTitleCase } from '../../utils/format.jsx';
 import PhotoLightbox from '../../components/PhotoLightbox';
+import { getPhotoUrl } from '../../api/config';
 
 const PRIORITY_STYLES = {
   low: 'bg-gray-100 text-gray-600',
@@ -147,7 +148,7 @@ export default function Maintenance() {
                     )}
                     {r.photo && (
                       <button
-                        onClick={() => setLightbox(`http://localhost:8000/uploads/${r.photo}`)}
+                        onClick={() => setLightbox(getPhotoUrl(r.photo))}
                         className="inline-flex items-center gap-2 px-3 py-2 bg-blue-50 text-blue-600 border border-blue-200 rounded-lg text-xs font-medium hover:bg-blue-100 transition">
                         <Image size={14} /> View Photo
                       </button>

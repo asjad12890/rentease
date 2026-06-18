@@ -7,6 +7,7 @@ import { Search, Users, Download } from 'lucide-react';
 const PHONE_RE = /^03\d{2}-\d{7}$/;
 const CNIC_RE = /^\d{5}-\d{7}-\d$/;
 import { fmtDate, fmtMonthYear, toTitleCase } from '../../utils/format.jsx';
+import { BASE_URL, getPhotoUrl } from '../../api/config';
 
 function ConfirmModal({ title, message, confirmLabel = 'Confirm', confirmClass = 'bg-red-600 hover:bg-red-700', onConfirm, onClose }) {
   return (
@@ -161,7 +162,7 @@ export default function Tenants() {
   async function downloadReceipt(rentId) {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`http://localhost:8000/rent/${rentId}/receipt`, {
+      const res = await fetch(`${BASE_URL}/rent/${rentId}/receipt`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) return;
@@ -504,9 +505,9 @@ export default function Tenants() {
               </div>
             </div>
             {rentModal.payment.receipt_image && (
-              <a href={`http://localhost:8000/uploads/${rentModal.payment.receipt_image}`} target="_blank" rel="noreferrer"
+              <a href={getPhotoUrl(rentModal.payment.receipt_image)} target="_blank" rel="noreferrer"
                 className="block">
-                <img src={`http://localhost:8000/uploads/${rentModal.payment.receipt_image}`} alt="receipt"
+                <img src={getPhotoUrl(rentModal.payment.receipt_image)} alt="receipt"
                   className="w-24 h-24 object-cover rounded-lg border border-gray-200 hover:opacity-80" />
               </a>
             )}

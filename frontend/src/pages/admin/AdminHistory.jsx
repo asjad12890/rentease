@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Search, Clock, X } from 'lucide-react';
 import { fmtDate, fmtMonthYear, toTitleCase, fmtCurrency } from '../../utils/format.jsx';
 
-const BASE = 'http://localhost:8000';
+import { BASE_URL as BASE } from '../../api/config';
 const token = () => localStorage.getItem('token');
 const authHeaders = () => ({ 'Authorization': `Bearer ${token()}`, 'Content-Type': 'application/json' });
 

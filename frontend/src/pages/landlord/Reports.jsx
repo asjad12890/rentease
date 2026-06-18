@@ -6,6 +6,7 @@ import api from '../../api/client';
 import Spinner from '../../components/Spinner';
 import { ExternalLink, Receipt } from 'lucide-react';
 import { fmtDate, fmtMonthYear } from '../../utils/format.jsx';
+import { getPhotoUrl } from '../../api/config';
 
 const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -165,7 +166,7 @@ export default function Reports() {
                                 <span className="text-xs text-blue-500 font-medium">Awaiting</span>
                               )}
                               {p.receipt_image && (
-                                <a href={`http://localhost:8000/uploads/${p.receipt_image}`} target="_blank" rel="noreferrer"
+                                <a href={getPhotoUrl(p.receipt_image)} target="_blank" rel="noreferrer"
                                   className="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-gray-700">
                                   <Receipt size={12} /> Receipt
                                 </a>

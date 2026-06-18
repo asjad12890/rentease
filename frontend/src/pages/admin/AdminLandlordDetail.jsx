@@ -4,7 +4,7 @@ import { ChevronLeft, ExternalLink, FileDown } from 'lucide-react';
 import api from '../../api/client';
 import Spinner from '../../components/Spinner';
 
-const BASE = 'http://localhost:8000';
+import { BASE_URL as BASE } from '../../api/config';
 const token = () => localStorage.getItem('token');
 import { fmtDate, fmtMonthYear, toTitleCase, fmtCurrency } from '../../utils/format.jsx';
 

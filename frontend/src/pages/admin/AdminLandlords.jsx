@@ -7,7 +7,7 @@ import Modal from '../../components/Modal';
 import Spinner from '../../components/Spinner';
 import { toTitleCase, fmtCurrency } from '../../utils/format.jsx';
 
-const BASE = 'http://localhost:8000';
+import { BASE_URL as BASE } from '../../api/config';
 const token = () => localStorage.getItem('token');
 const authHeaders = () => ({
   'Authorization': `Bearer ${token()}`,

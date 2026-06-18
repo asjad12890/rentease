@@ -4,6 +4,7 @@ import api from '../../api/client';
 import Spinner from '../../components/Spinner';
 import Modal from '../../components/Modal';
 import { fmtDate, fmtMonthYear } from '../../utils/format.jsx';
+import { getPhotoUrl } from '../../api/config';
 
 const STATUS_STYLES = {
   paid: 'bg-green-100 text-green-700',
@@ -237,9 +238,9 @@ export default function Rent() {
                   </td>
                   <td className="px-4 py-3">
                     {p.receipt_image ? (
-                      <a href={`http://localhost:8000/uploads/${p.receipt_image}`} target="_blank" rel="noreferrer">
+                      <a href={getPhotoUrl(p.receipt_image)} target="_blank" rel="noreferrer">
                         <img
-                          src={`http://localhost:8000/uploads/${p.receipt_image}`}
+                          src={getPhotoUrl(p.receipt_image)}
                           alt="receipt"
                           className="w-10 h-10 object-cover rounded-lg border border-gray-200 hover:opacity-80 transition"
                           onError={(e) => { e.target.style.display='none'; }}

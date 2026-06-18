@@ -4,6 +4,7 @@ import Spinner from '../../components/Spinner';
 import { ChevronDown, ChevronUp, Search, MessageSquare } from 'lucide-react';
 import { fmtDate, toTitleCase } from '../../utils/format.jsx';
 import PhotoLightbox from '../../components/PhotoLightbox';
+import { getPhotoUrl } from '../../api/config';
 
 const STATUS_STYLES = {
   open: 'bg-yellow-100 text-yellow-700',
@@ -109,9 +110,9 @@ export default function Complaints() {
                 <div className="border-t border-gray-100 p-5 bg-gray-50/50">
                   <p className="text-sm text-gray-700 mb-4 leading-relaxed">{c.description}</p>
                   {c.photo_url && (
-                    <button onClick={() => setLightbox(`http://localhost:8000/uploads/${c.photo_url}`)} className="block mb-4">
+                    <button onClick={() => setLightbox(getPhotoUrl(c.photo_url))} className="block mb-4">
                       <img
-                        src={`http://localhost:8000/uploads/${c.photo_url}`}
+                        src={getPhotoUrl(c.photo_url)}
                         alt="complaint photo"
                         className="w-28 h-28 object-cover rounded-xl border border-gray-200 hover:opacity-80 transition"
                       />

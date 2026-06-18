@@ -5,7 +5,7 @@ import { Wrench, UploadCloud, X, Image } from 'lucide-react';
 import { fmtDate, toTitleCase } from '../../utils/format.jsx';
 import PhotoLightbox from '../../components/PhotoLightbox';
 
-const BASE = 'http://localhost:8000';
+import { getPhotoUrl } from '../../api/config';
 const MAX_DESC = 500;
 
 const PRIORITY_CFG = {
@@ -209,7 +209,7 @@ export default function TenantMaintenance() {
                   </div>
                   {r.photo && (
                     <button
-                      onClick={() => setLightbox(r.photo)}
+                      onClick={() => setLightbox(getPhotoUrl(r.photo))}
                       className="shrink-0 px-3 py-1.5 border border-blue-400 text-blue-600 rounded-lg text-xs font-medium hover:bg-blue-50 flex items-center gap-1.5 transition">
                       <Image size={11} /> View Photo
                     </button>

@@ -25,7 +25,7 @@ const ROW_BORDER = {
   pending_verification: 'border-l-4 border-l-orange-400',
 };
 
-const BASE = 'http://localhost:8000';
+import { BASE_URL as BASE, getPhotoUrl } from '../../api/config';
 
 export default function TenantRent() {
   const [payments, setPayments] = useState([]);
@@ -164,7 +164,7 @@ export default function TenantRent() {
                           <Download size={11} /> Download Receipt
                         </button>
                       ) : p.receipt_image ? (
-                        <a href={p.receipt_image} target="_blank" rel="noreferrer"
+                        <a href={getPhotoUrl(p.receipt_image)} target="_blank" rel="noreferrer"
                           className="inline-flex items-center gap-1 px-2.5 py-1 text-xs border border-blue-300 text-blue-600 rounded-lg hover:bg-blue-50 transition">
                           <Receipt size={11} /> View Receipt
                         </a>

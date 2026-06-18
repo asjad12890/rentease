@@ -3,7 +3,7 @@ import { Building, X, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 import Spinner from '../../components/Spinner';
 import { fmtDate, toTitleCase } from '../../utils/format.jsx';
 
-const BASE = 'http://localhost:8000';
+import { BASE_URL as BASE } from '../../api/config';
 const token = () => localStorage.getItem('token');
 const authHeaders = () => ({ 'Authorization': `Bearer ${token()}`, 'Content-Type': 'application/json' });
 
